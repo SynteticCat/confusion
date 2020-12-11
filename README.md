@@ -1,3 +1,26 @@
+# Coursera
+
+**Курс**: Frontend Development with React  
+
+**Автор**: The Hong Kong University of Science and Technology  
+
+**Темы курса**:  
+- Welcome to Front-End Web Development with React
+- Full-Stack Web Development: The Big Picture
+- Setting up your Development Environment: Git and Node
+- Introduction to React
+- React Components
+- React Router and Single Page Applications
+- React Component Types
+- React Router
+- Single Page Applications
+- React Forms, Flow Architecture and Introduction to Redux
+- Controlled Forms
+- Uncontrolled Forms
+- Introduction to Redux
+- React Redux Form
+- Redux Actions
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
