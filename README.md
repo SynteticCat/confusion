@@ -1,4 +1,4 @@
-# Coursera
+# 🏫 Coursera
 
 **Курс**: Frontend Development with React  
 
