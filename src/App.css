@@ -32,3 +32,11 @@ address{
 .navbar-dark {
     background-color: #512DA8;
 }
+
+.btn-min-content {
+    width: min-content
+}
+
+.submit-row {
+    margin-top: 13px;
+}

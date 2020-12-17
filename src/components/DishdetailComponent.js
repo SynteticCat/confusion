@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { CommentForm } from './CommentForm';
 
 function RenderDish({ dish }) {
     return (
@@ -33,6 +34,7 @@ function RenderComments({ comments }) {
         <Card>
             <CardTitle tag="h5" className="m-3">Comments</CardTitle>
             <CardText>{commentItems}</CardText>
+            <CommentForm />
         </Card>
     );
 }
