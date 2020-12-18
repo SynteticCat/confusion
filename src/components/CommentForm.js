@@ -12,7 +12,7 @@ export class CommentForm extends Component {
         super(props);
 
         this.state = {
-            modal: false
+            isModalOpen: false
         };
 
         this.toggle = this.toggle.bind(this);
@@ -20,10 +20,12 @@ export class CommentForm extends Component {
     }
 
     toggle() {
-        this.setState({ modal: !this.state.modal })
+        this.setState({ isModalOpen: !this.state.isModalOpen })
     }
 
-    handleSubmit(values) {
+    handleSubmit(values, event) {
+        event.preventDefault();
+        this.toggle();
         console.log(JSON.stringify(values));
         alert(JSON.stringify(values));
     }
@@ -40,7 +42,7 @@ export class CommentForm extends Component {
                     <i className='fa fa-pencil' />{' Submit Comment'}
                 </Button>
                 
-                <Modal isOpen={this.state.modal}>
+                <Modal isOpen={this.state.isModalOpen}>
                     <ModalHeader toggle={this.toggle}>Submit Comment</ModalHeader>
                     <ModalBody>
                         <LocalForm onSubmit={(values) => this.handleSubmit(values)} >
