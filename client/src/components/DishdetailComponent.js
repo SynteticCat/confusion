@@ -4,11 +4,12 @@ import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { CommentForm } from './CommentForm';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 function RenderDish({ dish }) {
     return (
         <Card>
-            <CardImg top width="100%" src={dish.image} alt={dish.name} />
+            <CardImg top width="100%" src={baseUrl + dish.image} alt={dish.name} />
             <CardBody>
                 <CardTitle tag="h5" className="m-1">{dish.name}</CardTitle>
                 <CardText>{dish.description}</CardText>
