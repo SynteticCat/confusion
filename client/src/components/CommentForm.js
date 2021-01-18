@@ -23,11 +23,9 @@ export class CommentForm extends Component {
         this.setState({ isModalOpen: !this.state.isModalOpen })
     }
 
-    handleSubmit(values, event) {
-        event.preventDefault();
+    handleSubmit(values) {
         this.toggle();
-        console.log(JSON.stringify(values));
-        alert(JSON.stringify(values));
+        this.props.addComment(this.props.dishId, values.rating, values.name, values.comment);
     }
 
     render() {
