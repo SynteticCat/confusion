@@ -53,7 +53,7 @@ export class CommentForm extends Component {
                             <Col>
                                 <Row><Label htmlFor="rating">Rating</Label></Row>
                                 <Row>
-                                    <Control.select model=".rating" id="rating" 
+                                    <Control.select model='.rating' id='rating'
                                         className='w-100 form-control mb-13' name="rating">
                                         <option>1</option>
                                         <option>2</option>
