@@ -20,6 +20,7 @@
 - Introduction to Redux
 - React Redux Form
 - Redux Actions
+...
 
 **Используемые технологии**:  
 - [react](https://reactjs.org/)
