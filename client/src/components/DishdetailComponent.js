@@ -5,37 +5,49 @@ import { Link } from 'react-router-dom';
 import { CommentForm } from './CommentForm';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 function RenderDish({ dish }) {
     return (
-        <Card>
-            <CardImg top width="100%" src={baseUrl + dish.image} alt={dish.name} />
-            <CardBody>
-                <CardTitle tag="h5" className="m-1">{dish.name}</CardTitle>
-                <CardText>{dish.description}</CardText>
-            </CardBody>
-        </Card>
+        <FadeTransform in 
+            transformProps={{
+                exitTransform: "scale(0.5) translateY(-50%)"
+            }}>
+            <Card>
+                <CardImg top width="100%" src={baseUrl + dish.image} alt={dish.name} />
+                <CardBody>
+                    <CardTitle tag="h5" className="m-1">{dish.name}</CardTitle>
+                    <CardText>{dish.description}</CardText>
+                </CardBody>
+            </Card>
+        </FadeTransform>
     );
 }
 
 function RenderComments({ comments, dishId, postComment }) {
     const commentItems = comments.map((comment) => {
         return (
-            <div key={comment.id}>
-                <div className="container">
-                    <ul class="list-unstyled">
-                        <li className="mb-3 ml-3">{comment.comment}</li>
-                        <li className="mb-3 ml-3">-- {comment.author} , { new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date))) }</li>
-                    </ul>
+            <Fade in>
+                <div key={comment.id}>
+                    <div className="container">
+                        <ul class="list-unstyled">
+                            <li className="mb-3 ml-3">{comment.comment}</li>
+                            <li className="mb-3 ml-3">-- {comment.author} , { new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date))) }</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            </Fade>
         );
     })
 
     return (
         <Card>
             <CardTitle tag="h5" className="m-3">Comments</CardTitle>
-            <CardText>{commentItems}</CardText>
+            <CardText>
+                <Stagger in>
+                    {commentItems}
+                </Stagger>
+            </CardText>
             <CommentForm dishId={dishId} postComment={postComment} />
         </Card>
     );
