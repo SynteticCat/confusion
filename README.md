@@ -28,3 +28,25 @@
 - [redux-thunk](https://github.com/reduxjs/redux-thunk)
 - [json-server](https://github.com/typicode/json-server)
 - [json](https://www.json.org/json-en.html)
+...
+
+**Запуск приложения**
+
+1. Поставить [json-server](https://github.com/typicode/json-server)  
+2. В папке server запустить команду:
+```bash
+json-server --watch db.json --port 3001
+```
+
+**Доработка приложения**
+
+1. Выполняем необходимые доработки по принципам  
+    1.1.  Весь фукнционал в папку client  
+    1.2.  Все данные в папку server
+2. В папке client запустить команду:
+```bash
+npm run build
+```
+3. Копируем содержимое папки client/build в папку server/public
+4. Запускаем приложение
+
